@@ -1,10 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -19,10 +15,9 @@ import { UserModule } from './user/user.module';
       logging: true,
       synchronize: true,
     }),
-    UserModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {
   constructor(private connection: Connection) {}
