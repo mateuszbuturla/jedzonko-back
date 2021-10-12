@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
+import { UserModule } from './user/user.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -15,6 +16,7 @@ import { Connection } from 'typeorm';
       logging: true,
       synchronize: true,
     }),
+    UserModule,
   ],
   controllers: [],
   providers: [],
